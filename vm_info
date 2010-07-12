@@ -1,0 +1,16 @@
+detect_hardware()
+{
+	case "`cat /sys/class/dmi/id/uevent`" in
+		*QEMU*|*VirtualBox*)
+			modprobe snd-sb16 isapnp=0 irq=5
+			;;
+		*VMware*)
+			;;
+		*)
+			error WARNING: Not a virtual machine?
+			;;
+	esac
+
+	# return error to use auto-detect
+	return 1
+}
