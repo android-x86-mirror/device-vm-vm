@@ -11,6 +11,9 @@ detect_hardware()
 			;;
 	esac
 
+	# try to find the first Linux partition
+	[ -z "$DATA" ] && DATA=`fdisk -l /dev/sd? | grep ^/dev | grep '83.*Linux' | head -1 | awk '{ print $1 }'`
+
 	# return error to use auto-detect
 	return 1
 }
