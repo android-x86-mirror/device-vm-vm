@@ -1,1 +1,0 @@
-dev_mount sdcard /mnt/sdcard auto /devices/pci0000:00/0000:00:01.1/host0/target0:0:0/0:0:0:0/block/sda
