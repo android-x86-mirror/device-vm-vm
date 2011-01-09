@@ -1,7 +1,7 @@
 detect_hardware()
 {
 	case "`cat /sys/class/dmi/id/uevent`" in
-		*QEMU*|*VirtualBox*)
+		*QEMU*|*Bochs*|*VirtualBox*)
 			modprobe snd-sb16 isapnp=0 irq=5
 			;;
 		*VMware*)
